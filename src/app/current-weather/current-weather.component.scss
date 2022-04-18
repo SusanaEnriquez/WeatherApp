@@ -1,0 +1,47 @@
+.weather{
+    align-items: center;
+    text-align: center;
+}
+
+.cityName{
+    font-size: 3rem;
+}
+
+.temp{
+    font-size: 6rem;
+}
+
+.otherData{
+    font-size: 2rem;
+}
+
+.DateTime{
+    font-size: 1rem;
+    max-width: 300px;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 950px) {
+    .cityName{
+        font-size: 2rem;
+    }
+    
+    .temp{
+        font-size: 4rem;
+    }
+    
+    .otherData{
+        font-size: 1rem;
+    }
+
+    .DateTime{
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 450px) {    
+    .temp{
+        font-size: 3rem;
+    }
+}

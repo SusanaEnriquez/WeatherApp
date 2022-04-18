@@ -1,0 +1,14 @@
+<div *ngIf="currentData" class="weather">
+    <div class="cityName">{{currentData.name}}</div>
+    <div class="DateTime">{{time}} <br><br></div>
+    <div class="temp"><b> {{currentData.main.temp | number: '.0-0'}}{{simbol}}</b></div> <br>
+    <span class="otherData">
+        <i class="pi pi-arrow-down"></i> {{currentData.main.temp_min | number: '.0-0'}}{{simbol}} 
+    </span> &nbsp; &nbsp;
+    <span class="otherData"> 
+        <i class="pi pi-arrow-up"></i> {{currentData.main.temp_max | number: '.0-0'}}{{simbol}}
+    </span> 
+    <div class="otherData"><br>{{currentData.weather[0].description}}</div>
+</div><br>
+
+<p-selectButton [options]="stateOptions" [(ngModel)]="unit" optionLabel="label" optionValue="value" (onChange)="changeUnit()"></p-selectButton> 

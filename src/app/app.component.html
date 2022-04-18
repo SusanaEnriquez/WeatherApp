@@ -1,0 +1,19 @@
+<div class="bg" [ngStyle]="{'background-image':getBackground()}">
+    <div class="all">
+
+        <!-- Current weather -->
+        <div class="data">
+            <app-current-weather [currentData]="currentData" [simbol]="simbol" [time]="time" (unitChange)="changeUnit($event)"></app-current-weather>
+        </div>
+
+
+        <!-- Search-city & Forecast -->
+        <div class="forecast">
+            <app-search-city (searchC)="searchCity($event)"></app-search-city>
+            <br><hr><br>
+            <app-forecast [lon]="lon" [lat]="lat" [unit]="unit" [simbol]="simbol" [currentData]="currentData"></app-forecast>
+        </div>
+        
+    </div>
+</div>
+

@@ -1,0 +1,66 @@
+<!-- <p-accordion [activeIndex]="activeAccordionTabIndex">
+  <p-accordionTab *ngFor="let day of daily; let i = index" [selected]="i === activeAccordionTabIndex">  -->
+  <p-accordion [multiple]="true" >
+    <p-accordionTab *ngFor="let day of daily"> 
+          
+      <!-- Header -->
+      <ng-template pTemplate="header">
+        <div class="days">{{getDays(day.dt)}}</div> 
+        <div class="icon">
+          <img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png" alt="">
+          <!-- <img [src]="iconUrl" alt="Weather Icon"> -->
+          {{day.temp.min | number: '.0-0'}}{{simbol}} / {{day.temp.max | number: '.0-0'}}{{simbol}} 
+        </div>
+        <div style="font-size: 10px;">{{day.weather[0].description}}</div>
+      </ng-template>
+          
+      <!-- Data -->
+      <ng-template pTemplate="content">
+
+        <div class="firstcontent">
+          <img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png" alt="">
+
+          <div><b>{{day.weather[0].description}}</b><br>The high will be {{day.temp.max | number: '.0-0'}}{{simbol}}, the low will be {{day.temp.min | number: '.0-0'}}{{simbol}} </div>
+        </div>
+        
+        
+        <div class="datacontent">
+          <span><i class=""></i>{{day.wind_speed}}m/s</span> 
+          <span><i class=""></i>{{day.pressure}}hPa</span>
+          <span>Humidity: {{day.humidity}}</span>
+          <span>UV: {{day.uvi}}</span>
+          <span>Dew point: {{day.dew_point}}</span>
+        </div>
+
+          <table>
+            <tr>
+              <th></th>
+              <th>Morning</th>
+              <th>Afternoon</th>
+              <th>Evening</th>
+              <th>Night</th>
+            </tr>
+            <tr>
+              <td>TEMPERATURE</td>
+              <td>{{day.temp.morn}}{{simbol}}</td>
+              <td>{{day.temp.day}}{{simbol}}</td>
+              <td>{{day.temp.eve}}{{simbol}}</td>
+              <td>{{day.temp.night}}{{simbol}}</td>
+            </tr>
+            <tr>
+              <td>FEELS LIKE</td>
+              <td>{{day.feels_like.morn}}{{simbol}}</td>
+              <td>{{day.feels_like.day}}{{simbol}}</td>
+              <td>{{day.feels_like.eve}}{{simbol}}</td>
+              <td>{{day.feels_like.night}}{{simbol}}</td>
+            </tr>
+          </table>
+
+          <div>
+            Sunrise {{getHour(day.sunrise)}} &nbsp;&nbsp;&nbsp;&nbsp; Sunset: {{getHour(day.sunset)}}
+          </div>
+                
+      </ng-template>
+          
+    </p-accordionTab>
+  </p-accordion>

@@ -1,0 +1,61 @@
+.days{
+    min-width: 100px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.datacontent{
+    border-left: 2px  solid #3B82F6;
+    padding-left: 10px;
+    margin: 8px 0 8px 0;
+}
+
+.datacontent span{
+    padding-right: 20px;
+}
+
+table{
+    margin: 20px auto;
+    text-align: center;
+    width: 80%;
+}
+
+table tr{
+    font-size: small;
+}
+
+table tr td:first-child{
+    text-align: left;
+    font-size: small;
+    color: rgba(128, 128, 128, 0.836);
+    padding-right: 10px;
+}
+
+.icon{
+    // font-size: 18px;
+    margin: auto;
+}
+
+.firstcontent, .icon{
+    display: flex;
+}
+
+.icon img{
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.336));
+}
+
+.firstcontent img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 950px) {
+    table{
+        margin: 20px auto;
+        font-size: medium;
+    }
+
+}
