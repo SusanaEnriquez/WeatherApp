@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WeatherAPIService } from '../services/weather-api.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class ForecastComponent implements OnInit {
   @Input() unit: any;
   @Input() simbol: any;
   @Input() currentData: any;
+  @Output() newCurrent = new EventEmitter;
   forecast: any;
   daily: any;
   activeState: boolean[] = [true, false, false];
@@ -26,7 +27,8 @@ export class ForecastComponent implements OnInit {
       res => {
         this.forecast = res;
         this.daily = this.forecast.daily;
-        this.current = this.daily[0];     
+        this.current = this.daily[0];    
+        this.newCurrent.emit(this.current);
       },       
       err => console.log(err)
     )
@@ -38,6 +40,7 @@ export class ForecastComponent implements OnInit {
         this.forecast = res;
         this.daily = this.forecast.daily;
         this.current = this.daily[0];
+        this.newCurrent.emit(this.current);
         // console.log(this.daily); 
         // console.log(this.forecast);
         // console.log(this.current);

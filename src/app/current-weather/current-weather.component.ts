@@ -8,6 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter, OnChanges } from '@angu
 export class CurrentWeatherComponent implements OnInit {
 
   @Input() currentData: any;
+  @Input() newCurrent: any;
   @Input() simbol: any;
   @Input() time: any;
   @Output() unitChange = new EventEmitter();

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WeatherAPIService } from './services/weather-api.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class AppComponent implements OnInit{
 
   city: string = "México";
   currentData: any;
+  newCurrent: any;
   time: any;
  
   unit: string = "imperial";
@@ -26,8 +27,6 @@ export class AppComponent implements OnInit{
       res => {
         this.city = "México";
         this.currentData = res;
-        this.icon = this.currentData.weather[0].icon;
-        this.getBackground();
         this.time = this.getTime();
         if (this.unit=="metric") {
           this.simbol = "°C"
@@ -42,11 +41,8 @@ export class AppComponent implements OnInit{
   getWeather(cityName: string){
     this.weatherApi.getWeather(cityName, this.unit).subscribe(
       res => {
-        console.log(res);
         this.city= cityName;
         this.currentData = res;
-        this.icon = this.currentData.weather[0].icon;
-        this.getBackground();
         this.time = this.getTime();
         if (this.unit=="metric") {
           this.simbol = "°C"
@@ -80,17 +76,20 @@ export class AppComponent implements OnInit{
 
   changeUnit(e: any){
     this.unit = e;
-    // console.log(e);
     if (this.unit=="metric") {
       this.simbol = "°C"
+      this.getWeather(this.city)
     } else {
       this.simbol = "°F"
+      this.getWeather(this.city)
     }
   }
 
-  // getCurrent(e: any){
-  //   this.currentData = e;
-  // }
+  getCurrent(e: any){
+    this.newCurrent = e;
+    this.icon = this.newCurrent.weather[0].icon;
+    this.getBackground();
+  }
 
   getBackground(): any {
     switch (this.icon) {
