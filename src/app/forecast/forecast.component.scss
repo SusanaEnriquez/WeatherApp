@@ -21,20 +21,24 @@
     display: flex;
     justify-content: space-between;
     font-size: small;
-    flex-direction: column;
+    flex-flow: column wrap;
+}
+
+.table div{
+    min-width: 60px;
 }
 
 .header{
-    align-items: end;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-weight: bold;
     flex-direction: row;
+    padding-bottom: 5px;
 }
 
 .content1, .content2{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: row;
     
 }
@@ -69,9 +73,16 @@
 }
 
 @media screen and (max-width: 950px) {
-    table{
+    .table{
         margin: 20px auto;
         font-size: medium;
     }
+}
 
+@media screen and (max-width: 650px) {    
+
+    .table{
+        width: 100%;
+        margin: 20px 0;
+    }
 }
