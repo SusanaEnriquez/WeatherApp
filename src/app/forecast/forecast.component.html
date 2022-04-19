@@ -30,33 +30,33 @@
           <span>Dew point: {{day.dew_point}}</span>
         </div>
 
-          <table>
-            <tr>
-              <th></th>
-              <th>Morning</th>
-              <th>Afternoon</th>
-              <th>Evening</th>
-              <th>Night</th>
-            </tr>
-            <tr>
-              <td>TEMPERATURE</td>
-              <td>{{day.temp.morn}}{{simbol}}</td>
-              <td>{{day.temp.day}}{{simbol}}</td>
-              <td>{{day.temp.eve}}{{simbol}}</td>
-              <td>{{day.temp.night}}{{simbol}}</td>
-            </tr>
-            <tr>
-              <td>FEELS LIKE</td>
-              <td>{{day.feels_like.morn}}{{simbol}}</td>
-              <td>{{day.feels_like.day}}{{simbol}}</td>
-              <td>{{day.feels_like.eve}}{{simbol}}</td>
-              <td>{{day.feels_like.night}}{{simbol}}</td>
-            </tr>
-          </table>
+          <div class="table">
+            <div class="header row">
+                <div></div>
+                <div>Morning</div>
+                <div>Afternoon</div>
+                <div>Evening</div>
+                <div>Night</div>
+            </div>
 
-          <div>
-            Sunrise {{getHour(day.sunrise)}} &nbsp;&nbsp;&nbsp;&nbsp; Sunset: {{getHour(day.sunset)}}
+            <div class="content1 row">
+                <div>TEMPERATURE</div>
+                <div>{{day.temp.morn}}{{simbol}}</div>
+                <div>{{day.temp.day}}{{simbol}}</div>
+                <div>{{day.temp.eve}}{{simbol}}</div>
+                <div>{{day.temp.night}}{{simbol}}</div>
+            </div>
+
+            <div class="content2 row">  
+                <div>FEELS LIKE</div>
+                <div>{{day.feels_like.morn}}{{simbol}}</div>
+                <div>{{day.feels_like.day}}{{simbol}}</div>
+                <div>{{day.feels_like.eve}}{{simbol}}</div>
+                <div>{{day.feels_like.night}}{{simbol}}</div>
+            </div>
           </div>
+
+          <div>Sunrise {{getHour(day.sunrise)}} &nbsp;&nbsp;&nbsp;&nbsp; Sunset: {{getHour(day.sunset)}}</div>
                 
       </ng-template>
           

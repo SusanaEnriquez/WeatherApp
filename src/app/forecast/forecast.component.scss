@@ -14,21 +14,37 @@
     padding-right: 20px;
 }
 
-table{
+.table{
     margin: 20px auto;
     text-align: center;
     width: 80%;
-}
-
-table tr{
+    display: flex;
+    justify-content: space-between;
     font-size: small;
+    flex-direction: column;
 }
 
-table tr td:first-child{
+.header{
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    flex-direction: row;
+}
+
+.content1, .content2{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    
+}
+
+.header div:first-child, .content1 div:first-child, .content2 div:first-child{
     text-align: left;
     font-size: small;
     color: rgba(128, 128, 128, 0.836);
     padding-right: 10px;
+    width: 90px;
 }
 
 .icon{
