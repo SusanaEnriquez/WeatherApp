@@ -8,7 +8,7 @@
     <span class="otherData"> 
         <i class="pi pi-arrow-up"></i> {{newCurrent.temp.max | number: '.0-0'}}{{simbol}}
     </span> 
-    <div class="otherData"><br>{{newCurrent.weather[0].description}}</div>
+    <div class="otherData"><br>{{currentData.weather[0].description}}</div>
 </div><br>
 
 <p-selectButton [options]="stateOptions" [(ngModel)]="unit" optionLabel="label" optionValue="value" (onChange)="changeUnit()"></p-selectButton> 

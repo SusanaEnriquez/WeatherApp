@@ -28,6 +28,8 @@ export class AppComponent implements OnInit{
         this.city = "México";
         this.currentData = res;
         this.time = this.getTime();
+        this.icon = this.currentData.weather[0].icon;
+        this.getBackground();
         if (this.unit=="metric") {
           this.simbol = "°C"
         } else {
@@ -44,6 +46,8 @@ export class AppComponent implements OnInit{
         this.city= cityName;
         this.currentData = res;
         this.time = this.getTime();
+        this.icon = this.currentData.weather[0].icon;
+        this.getBackground();
         if (this.unit=="metric") {
           this.simbol = "°C"
         } else {
@@ -77,18 +81,18 @@ export class AppComponent implements OnInit{
   changeUnit(e: any){
     this.unit = e;
     if (this.unit=="metric") {
-      this.simbol = "°C"
-      this.getWeather(this.city)
+      this.simbol = "°C";
+      this.getWeather(this.city);
     } else {
-      this.simbol = "°F"
-      this.getWeather(this.city)
+      this.simbol = "°F";
+      this.getWeather(this.city);
     }
   }
 
   getCurrent(e: any){
     this.newCurrent = e;
-    this.icon = this.newCurrent.weather[0].icon;
-    this.getBackground();
+    // this.icon = this.newCurrent.weather[0].icon;
+    // this.getBackground();
   }
 
   getBackground(): any {

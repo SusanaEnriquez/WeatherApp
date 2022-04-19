@@ -7,8 +7,7 @@
       <ng-template pTemplate="header">
         <div class="days">{{getDays(day.dt)}}</div> 
         <div class="icon">
-          <img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png" alt="">
-          <!-- <img [src]="iconUrl" alt="Weather Icon"> -->
+          <img [src]='"http://openweathermap.org/img/wn/"+day.weather[0].icon+"@2x.png"' alt="Weather Icon">
           {{day.temp.min | number: '.0-0'}}{{simbol}} / {{day.temp.max | number: '.0-0'}}{{simbol}} 
         </div>
         <div style="font-size: 10px;">{{day.weather[0].description}}</div>
@@ -18,8 +17,7 @@
       <ng-template pTemplate="content">
 
         <div class="firstcontent">
-          <img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png" alt="">
-
+          <img [src]='"http://openweathermap.org/img/wn/"+day.weather[0].icon+"@2x.png"' alt="Weather Icon">
           <div><b>{{day.weather[0].description}}</b><br>The high will be {{day.temp.max | number: '.0-0'}}{{simbol}}, the low will be {{day.temp.min | number: '.0-0'}}{{simbol}} </div>
         </div>
         

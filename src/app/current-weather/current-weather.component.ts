@@ -14,6 +14,7 @@ export class CurrentWeatherComponent implements OnInit {
   @Output() unitChange = new EventEmitter();
   unit: string = "imperial"
   stateOptions: any[];
+  temp = [];
   
   constructor() {
     this.stateOptions = [{label: '°F', value: 'imperial'}, {label: '°C', value: 'metric'}];

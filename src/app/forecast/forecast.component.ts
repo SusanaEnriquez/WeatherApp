@@ -18,7 +18,6 @@ export class ForecastComponent implements OnInit {
   daily: any;
   activeState: boolean[] = [true, false, false];
   current: any;
-  // iconUrl: string = "http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png";
 
   constructor(private weatherApi: WeatherAPIService) { }
 
@@ -40,11 +39,7 @@ export class ForecastComponent implements OnInit {
         this.forecast = res;
         this.daily = this.forecast.daily;
         this.current = this.daily[0];
-        this.newCurrent.emit(this.current);
-        // console.log(this.daily); 
-        // console.log(this.forecast);
-        // console.log(this.current);
-        
+        this.newCurrent.emit(this.current);        
       },       
       err => console.log(err)
     )    
@@ -66,9 +61,5 @@ export class ForecastComponent implements OnInit {
     var t = h + ":" + m + d
     return t
   }
-
-  // getIcon(){
-  //   this.iconUrl = "http://openweathermap.org/img/wn/" + this.daily.weather[0].icon + "@2x.png"
-  // }
 
 }
