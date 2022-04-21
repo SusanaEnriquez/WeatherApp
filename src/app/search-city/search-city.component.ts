@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class SearchCityComponent implements OnInit {
 
-  @Output() searchC = new EventEmitter();
+  @Output() searchC: EventEmitter<void> = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {

@@ -10,7 +10,7 @@
           <img [src]='"http://openweathermap.org/img/wn/"+day.weather[0].icon+"@2x.png"' alt="Weather Icon">
           {{day.temp.min | number: '.0-0'}}{{simbol}} / {{day.temp.max | number: '.0-0'}}{{simbol}} 
         </div>
-        <div style="font-size: 10px;">{{day.weather[0].description}}</div>
+        <div class="description">{{day.weather[0].description}}</div>
       </ng-template>
           
       <!-- Data -->

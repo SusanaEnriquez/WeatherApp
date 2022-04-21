@@ -8,12 +8,12 @@ import { WeatherAPIService } from '../services/weather-api.service';
 })
 export class ForecastComponent implements OnInit {
 
-  @Input() lon: any;
-  @Input() lat: any;
-  @Input() unit: any;
-  @Input() simbol: any;
+  @Input() lon: number = 0;
+  @Input() lat: number = 0;
+  @Input() unit: string = "";
+  @Input() simbol: string = ""; 
   @Input() currentData: any;
-  @Output() newCurrent = new EventEmitter;
+  @Output() newCurrent: EventEmitter<void> = new EventEmitter<void>();
   forecast: any;
   daily: any;
   activeState: boolean[] = [true, false, false];

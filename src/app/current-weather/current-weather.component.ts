@@ -9,9 +9,9 @@ export class CurrentWeatherComponent implements OnInit {
 
   @Input() currentData: any;
   @Input() newCurrent: any;
-  @Input() simbol: any;
+  @Input() simbol: string = "";
   @Input() time: any;
-  @Output() unitChange = new EventEmitter();
+  @Output() unitChange: EventEmitter<string> = new EventEmitter<string>();
   unit: string = "imperial"
   stateOptions: any[];
   temp = [];
@@ -28,7 +28,6 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   changeUnit(){
-    // console.log(this.unit);
     this.unitChange.emit(this.unit);
   }
 }
