@@ -14,10 +14,11 @@ export class CurrentWeatherComponent implements OnInit {
   @Output() unitChange: EventEmitter<string> = new EventEmitter<string>();
   unit: string = "imperial"
   stateOptions: any[];
-  temp = [];
+  temp: number[];
   
   constructor() {
     this.stateOptions = [{label: '°F', value: 'imperial'}, {label: '°C', value: 'metric'}];
+    this.temp = [];
    }
 
   ngOnInit(): void {
